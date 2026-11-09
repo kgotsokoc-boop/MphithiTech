@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Mphithi-Tech Holdings (Pty) Ltd</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+      .logo {
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+            padding: 8px 16px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+    
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.7;
+      min-height: 100vh;
+      display: block;
+      padding: 0;
+    }
+
+    .about-container {
+      max-width: 850px;
+      width: 100%;
+      background: #1e293b;
+      border-radius: 16px;
+      padding: 3rem 2.5rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      border: 1px solid #334155;
+    }
+
+    .about-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+      box-shadow: 0 4px 20px rgba(56, 189, 248, 0.4);
+    }
+
+    .about-header h1 {
+      font-size: 1.9rem;
+      color: #f1f5f9;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .about-header .tagline {
+      color: #38bdf8;
+      font-size: 1rem;
+      font-weight: 500;
+      margin-top: 0.25rem;
+    }
+
+    .divider {
+      height: 3px;
+      width: 60px;
+      background: linear-gradient(90deg, #38bdf8, #6366f1);
+      border-radius: 3px;
+      margin-bottom: 1.75rem;
+    }
+
+    .about-container p {
+      margin-bottom: 1.2rem;
+      color: #cbd5e1;
+      font-size: 1.02rem;
+    }
+
+    .about-container p strong {
+      color: #f1f5f9;
+    }
+
+    .skills {
+      margin: 2rem 0 2rem;
+    }
+
+    .skills h2 {
+      font-size: 1.15rem;
+      color: #f1f5f9;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .tag {
+      background: #0f172a;
+      border: 1px solid #334155;
+      color: #93c5fd;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .tag:hover {
+      background: #1d4ed8;
+      color: #fff;
+      border-color: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    .cta {
+      margin-top: 2.5rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.8rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      color: #fff;
+      box-shadow: 0 4px 18px rgba(56, 189, 248, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 26px rgba(56, 189, 248, 0.5);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #93c5fd;
+      border: 2px solid #334155;
+    }
+
+    .btn-outline:hover {
+      border-color: #38bdf8;
+      color: #38bdf8;
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 600px) {
+      .about-container {
+        padding: 2rem 1.5rem;
+      }
+      .about-header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about-header h1 {
+        font-size: 1.5rem;
+      }
+      .divider {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .cta {
+        justify-content: center;
+      }
+    }
+  </style>
+<link rel="icon" href="Mphithi-Tech.jpg"><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header"><div class="bar"><a class="brand" href="index.html"><img src="Mphithi-Tech.jpg" alt="Mphithi-Tech Holdings (Pty) Ltd"></a><button class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button><nav class="site-nav" data-nav><a href="index.html">Home</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="about.html" aria-current="page">About</a><a href="contact.html">Contact</a></nav></div></header>
+  <main style="padding:2rem 1rem">
+  <section class="about-container" style="margin:0 auto">
+    <div class="about-header">
+       <div class="avatar">CK</div>
+        <div><h1>Comfort Oratile Kgotsoko</h1>
+        <p class="tagline">Founder · Software Developer · Tshwane University of Technology</p></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <p>
+      Hi, I'm <strong>Mr Comfort Oratile Kgotsoko</strong> — a student at
+      <strong>Tshwane University of Technology</strong> and a passionate
+      <strong>software developer</strong> specialising in diagnosing and fixing
+      application failures, bugs, and performance issues that affect websites
+      and web applications.
+    </p>
+
+    <p>
+      I focus on identifying the root causes of <strong>app crashes</strong>,
+      <strong>runtime errors</strong>, and the hidden faults that lead to
+      <strong>slow, underperforming websites</strong>. Whether it's a frontend
+      bug, a backend failure, or a performance bottleneck, I trace the problem
+      and deliver clean, reliable solutions.
+    </p>
+
+    <p>
+      My goal is simple: make software work the way it's supposed to —
+      <strong>fast, stable, and dependable</strong>. I combine my academic
+      training at TUT with hands-on troubleshooting to help businesses and
+      individuals get their applications running smoothly again.
+    </p>
+
+    <div class="skills">
+      <h2>What I Do</h2>
+      <div class="tags">
+        <span class="tag">App Failure Diagnosis</span>
+        <span class="tag">Bug Fixing</span>
+        <span class="tag">Website Performance</span>
+        <span class="tag">Error Troubleshooting</span>
+        <span class="tag">Software Debugging</span>
+        <span class="tag">Performance Optimization</span>
+        <span class="tag">Web Development</span>
+      </div>
+    </div>
+
+    <div class="cta">
+      <a href="contact.html" class="btn btn-primary">Get In Touch</a>
+      <a href="portfolio.html" class="btn btn-outline">View Our Work</a>
+    </div>
+  </section>
+  </main>
+<footer class="site-footer"><img src="Mphithi-Tech.jpg" alt="Mphithi-Tech logo"><p>Building reliable software. Fixing what others can't.</p><nav><a href="index.html">Home</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav><p>&copy; <span data-year>2026</span> Mphithi-Tech Holdings (Pty) Ltd. All rights reserved.</p></footer>
+<script src="script.js"></script>
+<script src="assistant.js"></script>
+</body>
+</html>

@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services & Company Profile — Mphithi-Tech Holdings (Pty) Ltd</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0a0f1e;
+      color: #e2e8f0;
+      line-height: 1.7;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 15, 30, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #1e293b;
+      padding: 0.8rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .nav-brand img {
+      height: 55px;
+      width: auto;
+      border-radius: 8px;
+      background: #ffffff;
+      padding: 4px 6px;
+      transition: transform 0.25s ease;
+    }
+
+    .nav-brand img:hover {
+      transform: scale(1.05);
+    }
+
+    .nav-brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .nav-brand-text .brand-name {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #38bdf8;
+      letter-spacing: 0.3px;
+    }
+
+    .nav-brand-text .brand-sub {
+      font-size: 0.7rem;
+      color: #94a3b8;
+      font-weight: 500;
+      letter-spacing: 0.4px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+    }
+
+    nav ul a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.25s ease;
+    }
+
+    nav ul a:hover {
+      color: #38bdf8;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.15), transparent 50%),
+        radial-gradient(circle at 80% 30%, rgba(192, 132, 252, 0.12), transparent 50%),
+        #0a0f1e;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .hero-logo {
+      width: 140px;
+      height: auto;
+      margin: 0 auto 1.5rem;
+      display: block;
+      background: #ffffff;
+      padding: 10px 14px;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(56, 189, 248, 0.2);
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #f1f5f9, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+      line-height: 1.15;
+    }
+
+    .hero p {
+      max-width: 750px;
+      margin: 0 auto 2rem;
+      color: #94a3b8;
+      font-size: 1.08rem;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #38bdf8;
+      padding: 0.4rem 1.1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      color: #fff;
+      box-shadow: 0 4px 22px rgba(56, 189, 248, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.5);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #93c5fd;
+      border: 2px solid #334155;
+    }
+
+    .btn-outline:hover {
+      border-color: #38bdf8;
+      color: #38bdf8;
+      transform: translateY(-3px);
+    }
+
+    /* ===== SECTION WRAPPER ===== */
+    section {
+      padding: 4.5rem 2rem;
+      max-width: 1150px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: #f1f5f9;
+      text-align: center;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #94a3b8;
+      max-width: 620px;
+      margin: 0 auto 3rem;
+      font-size: 1rem;
+    }
+
+    .accent-line {
+      width: 70px;
+      height: 4px;
+      background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
+      border-radius: 4px;
+      margin: 0 auto 1.2rem;
+    }
+
+    /* ===== SERVICE CARDS ===== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .service-card {
+      background: #111827;
+      border: 1px solid #1e293b;
+      border-radius: 16px;
+      padding: 2rem 1.7rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: #334155;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(129, 140, 248, 0.15));
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.15rem;
+      color: #f1f5f9;
+      margin-bottom: 0.7rem;
+      font-weight: 600;
+    }
+
+    .service-card p {
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
+
+    .service-card ul {
+      list-style: none;
+      margin-top: 1rem;
+      padding: 0;
+    }
+
+    .service-card ul li {
+      color: #cbd5e1;
+      font-size: 0.9rem;
+      padding-left: 1.3rem;
+      position: relative;
+      margin-bottom: 0.4rem;
+    }
+
+    .service-card ul li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #38bdf8;
+      font-weight: 700;
+    }
+
+    /* ===== WHY US ===== */
+    .why-us {
+      background: linear-gradient(180deg, #0a0f1e, #0f172a);
+      border-top: 1px solid #1e293b;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+
+    .stat-box {
+      background: #111827;
+      border: 1px solid #1e293b;
+      border-radius: 14px;
+      padding: 2rem 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .stat-box:hover {
+      border-color: #38bdf8;
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.15);
+    }
+
+    .stat-box .stat-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-box .stat-label {
+      color: #94a3b8;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* ===== SPONSOR CTA ===== */
+    .sponsor-cta {
+      background:
+        radial-gradient(circle at 30% 50%, rgba(56, 189, 248, 0.12), transparent 55%),
+        radial-gradient(circle at 70% 50%, rgba(192, 132, 252, 0.1), transparent 55%),
+        #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 20px;
+      padding: 3.5rem 2rem;
+      text-align: center;
+      margin: 0 auto;
+      max-width: 900px;
+    }
+
+    .sponsor-cta h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      color: #f1f5f9;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .sponsor-cta p {
+      color: #94a3b8;
+      max-width: 620px;
+      margin: 0 auto 2rem;
+      font-size: 1rem;
+    }
+
+    .sponsor-points {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .sponsor-points span {
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: #93c5fd;
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    /* ===== BIOGRAPHY ===== */
+    .bio-section {
+      background: #0a0f1e;
+      border-top: 1px solid #1e293b;
+    }
+
+    .bio-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+      margin-top: 2rem;
+    }
+
+    .bio-text p {
+      color: #cbd5e1;
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
+
+    .bio-text strong {
+      color: #f1f5f9;
+    }
+
+    .bio-highlights {
+      background: #111827;
+      border: 1px solid #1e293b;
+      border-radius: 16px;
+      padding: 2rem;
+    }
+
+    .bio-highlights h3 {
+      color: #38bdf8;
+      font-size: 1.05rem;
+      margin-bottom: 1.2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .bio-highlights ul {
+      list-style: none;
+    }
+
+    .bio-highlights ul li {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid #1e293b;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+    }
+
+    .bio-highlights ul li:last-child {
+      border-bottom: none;
+    }
+
+    .bio-highlights ul li::before {
+      content: '✓';
+      color: #38bdf8;
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #060a14;
+      border-top: 1px solid #1e293b;
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+    }
+
+    .footer-logo {
+      height: 60px;
+      width: auto;
+      margin: 0 auto 1rem;
+      display: block;
+      background: #ffffff;
+      padding: 8px 12px;
+      border-radius: 10px;
+    }
+
+    footer p {
+      color: #64748b;
+      font-size: 0.88rem;
+      margin-bottom: 0.4rem;
+    }
+
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin: 1.2rem 0;
+    }
+
+    footer .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.25s ease;
+    }
+
+    footer .footer-links a:hover {
+      color: #38bdf8;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        gap: 1rem;
+      }
+
+      .nav-brand img {
+        height: 45px;
+      }
+
+      .hero {
+        padding: 3.5rem 1.5rem 3rem;
+      }
+
+      .hero-logo {
+        width: 110px;
+      }
+
+      section {
+        padding: 3.5rem 1.5rem;
+      }
+
+      .bio-content {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+<link rel="icon" href="Mphithi-Tech.jpg"><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== NAVBAR WITH LOGO ===== -->
+  <nav>
+    <a href="#" class="nav-brand">
+      <img src="Mphithi-Tech.jpg" height="50" alt="Mphithi-Tech Holdings Logo" />
+      <div class="nav-brand-text">
+        <span class="brand-name">Mphithi-Tech</span>
+        <span class="brand-sub">Holdings (Pty) Ltd</span>
+      </div>
+    </a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why-us">Why Us</a></li>
+      <li><a href="#sponsors">Partner With Us</a></li>
+      <li><a href="#biography">Biography</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero">
+    <img src="Mphithi-Tech.jpg" alt="Mphithi-Tech Holdings Logo" class="hero-logo" />
+    <span class="hero-badge">Innovating Technology Solutions</span>
+    <h1>Building Reliable Software.<br />Fixing What Others Can't.</h1>
+    <p>
+      Mphithi-Tech Holdings (Pty) Ltd is a South African technology company
+      specialising in application failure diagnosis, website performance
+      optimization, and end-to-end software development. We turn broken
+      systems into dependable, high-performing digital assets.
+    </p>
+    <div class="hero-buttons">
+      <a href="#services" class="btn btn-primary">Explore Our Services</a>
+      <a href="#sponsors" class="btn btn-outline">Become a Sponsor</a>
+    </div>
+  </header>
+
+  <!-- ===== SERVICES ===== -->
+  <section id="services">
+    <div class="accent-line"></div>
+    <h2 class="section-title">Our Core Services</h2>
+    <p class="section-subtitle">
+      We solve the problems that cost businesses time, money, and reputation —
+      from crashing apps to slow, underperforming websites.
+    </p>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">🐞</div>
+        
+        <h3>App Failure Diagnosis & Repair</h3>
+        <p>
+          We identify, trace, and fix application crashes, runtime errors, and
+          system faults that disrupt your operations.
+        </p>
+        <ul>
+          <li>Root-cause error analysis</li>
+          <li>Crash & bug fixing</li>
+          <li>Stability testing</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">⚡</div>
+  
+        <h3>Website Performance Optimization</h3>
+        <p>
+          Slow websites lose customers. We fine-tune speed, responsiveness, and
+          reliability across all devices.
+        </p>
+        <ul>
+          <li>Load-time reduction</li>
+          <li>Performance audits</li>
+          <li>Core Web Vitals tuning</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">💻</div>
+        
+        <h3>Custom Software Development</h3>
+        <p>
+          We design and build tailored software solutions that match your
+          business goals and scale with your growth.
+        </p>
+        <ul>
+          <li>Web & mobile apps</li>
+          <li>API integration</li>
+          <li>System architecture</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔎</div>
+      
+        <h3>Website Fault Detection</h3>
+        <p>
+          Comprehensive inspection of your website to uncover hidden faults
+          before they impact your users or revenue.
+        </p>
+        <ul>
+          <li>Broken link & script checks</li>
+          <li>Security vulnerability scans</li>
+          <li>Cross-browser testing</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🧰</div>
+      
+        <h3>Maintenance & Support</h3>
+        <p>
+          Ongoing monitoring and technical support to keep your systems
+          healthy, updated, and secure long-term.
+        </p>
+        <ul>
+          <li>24/7 system monitoring</li>
+          <li>Regular updates & patches</li>
+          <li>Priority technical support</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🧭</div>
+        <h3>Tech Consulting & Strategy</h3>
+        <p>
+          Strategic guidance to help organisations choose the right
+          technologies and avoid costly digital mistakes.
+        </p>
+        <ul>
+          <li>Technology roadmaps</li>
+          <li>System modernization</li>
+          <li>Digital transformation</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== WHY US ===== -->
+  <section class="why-us" id="why-us">
+    <div class="accent-line"></div>
+    <h2 class="section-title">Why Partner With Mphithi-Tech</h2>
+    <p class="section-subtitle">
+      We combine technical precision with a commitment to real business results.
+    </p>
+
+    <div class="stats-grid">
+      <div class="stat-box">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Commitment to Quality</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">Fast</span>
+        <span class="stat-label">Turnaround Times</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">TUT</span>
+        <span class="stat-label">University-Trained Expertise</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">SA</span>
+        <span class="stat-label">Locally Rooted, Globally Minded</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SPONSOR CTA ===== -->
+  <section id="sponsors">
+    <div class="sponsor-cta">
+      <h2>Invest in the Future of African Tech</h2>
+      <p>
+        Mphithi-Tech Holdings (Pty) Ltd is seeking sponsors and partners who
+        believe in nurturing local tech talent and building reliable digital
+        infrastructure for South African businesses. Your support fuels
+        innovation, creates jobs, and solves real problems.
+      </p>
+      <div class="sponsor-points">
+        <span> High-Growth Potential</span>
+        <span> Transparent Partnerships</span>
+        <span> Measurable Impact</span>
+        <span>Community-Driven</span>
+      </div>
+      <div class="hero-buttons">
+        <a href="mailto:sponsors@mphithitech.co.za" class="btn btn-primary">Sponsor Us</a>
+        <a href="contact.html" class="btn btn-outline">Request a Proposal</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BIOGRAPHY ===== -->
+  <section class="bio-section" id="biography">
+    <div class="accent-line"></div>
+    <h2 class="section-title">Biography</h2>
+    <p class="section-subtitle">
+      The person and the mission behind Mphithi-Tech Holdings.
+    </p>
+
+    <div class="bio-content">
+      <div class="bio-text">
+        <p>
+          <strong>Mr Comfort Oratile Kgotsoko</strong> is the founder of
+          Mphithi-Tech Holdings (Pty) Ltd and a software developer currently
+          studying at <strong>Tshwane University of Technology (TUT)</strong>.
+          His passion lies in solving the technical problems that most people
+          overlook — application failures, system faults, and the hidden issues
+          that cause websites to underperform.
+        </p>
+        <p>
+          Driven by a belief that reliable technology should be accessible to
+          every business, Comfort founded Mphithi-Tech Holdings to bridge the
+          gap between complex technical challenges and practical, affordable
+          solutions. His academic background, combined with hands-on
+          troubleshooting experience, allows him to approach problems with both
+          theoretical depth and real-world pragmatism.
+        </p>
+        <p>
+          Under his leadership, Mphithi-Tech Holdings is committed to building
+          a reputation for excellence, integrity, and innovation — positioning
+          itself as a trusted technology partner for businesses across South
+          Africa and beyond.
+        </p>
+      </div>
+
+      <div class="bio-highlights">
+        <h3>Founder Highlights</h3>
+        <ul>
+          <li>Founder & Lead Developer, Mphithi-Tech Holdings (Pty) Ltd</li>
+          <li>Software Development Student, Tshwane University of Technology</li>
+          <li>Specialist in App Failure Diagnosis & Repair</li>
+          <li>Expert in Website Performance Optimization</li>
+          <li>Committed to Solving Real Business Tech Problems</li>
+          <li>Advocate for Local Tech Talent Development</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <img src="Mphithi-Tech.jpg" alt="Mphithi-Tech Holdings Logo" class="footer-logo" />
+    <p>Building reliable software. Fixing what others can't.</p>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#sponsors">Sponsors</a>
+      <a href="#biography">Biography</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p>&copy; <span data-year>2026</span> Mphithi-Tech Holdings (Pty) Ltd. All rights reserved.</p>
+  </footer>
+
+<script src="script.js"></script>
+<script src="assistant.js"></script>
+</body>
+</html>

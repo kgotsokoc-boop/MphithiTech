@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mphithi-Tech Holdings (Pty) Ltd | Technical Failure Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: rgba(15, 23, 42, 0.95);
+            border-bottom: 1px solid #1e293b;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        /* Logo with padded background */
+        .logo {
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+            padding: 8px 16px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        .logo img {
+            height: 80px;
+            width: auto;
+            display: block;
+            
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            z-index: 2;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            color: #f8fafc;
+        }
+
+        h1 span {
+            color: #38bdf8;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            margin-bottom: 2.5rem;
+            max-width: 580px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: #38bdf8;
+            color: #0f172a;
+        }
+
+        .btn-primary:hover {
+            background: #0ea5e9;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #e2e8f0;
+            border: 1px solid #334155;
+        }
+
+        .btn-secondary:hover {
+            border-color: #38bdf8;
+            color: #38bdf8;
+        }
+
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 5rem 5%;
+            background: #0f172a;
+        }
+
+        .feature-card {
+            background: #1e293b;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: #f1f5f9;
+        }
+
+        .feature-card p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #020617;
+            color: #64748b;
+            font-size: 0.9rem;
+            border-top: 1px solid #1e293b;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.3rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                min-height: 80vh;
+            }
+
+            .logo img {
+                height: 42px;
+            }
+        }
+    </style>
+<link rel="icon" href="Mphithi-Tech.jpg"><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <!-- Make sure the logo file is in the same folder as this HTML file -->
+            <img src="Mphithi-Tech.jpg" alt="Mphithi-Tech Holdings (Pty) Ltd">
+        </div>
+        <button class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+        <nav data-nav><a href="index.html">Home</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+    </header>
+
+    <!-- Hero / Welcoming Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">Technical Failure Solutions</div>
+            
+            <h1>
+                We Fix What <span>Others Can’t</span>
+            </h1>
+            
+            <p class="subtitle">
+                Welcome to Mphithi-Tech Holdings. We specialise in diagnosing and solving complex technical failures — from websites and systems that crash, to infrastructure that fails when you need it most.
+            </p>
+
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary">Get Expert Help</a>
+                <a href="services.html" class="btn btn-secondary">Our Solutions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Value Props -->
+    <section class="features" id="services">
+        <div class="feature-card">
+            <h3>Rapid Diagnosis</h3>
+            <p>We quickly identify the root cause of technical failures so your systems are back online faster.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Reliable Fixes</h3>
+            <p>From website crashes to network outages — we deliver lasting solutions, not temporary patches.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Prevent Future Failures</h3>
+            <p>We don’t just fix problems — we strengthen your systems to reduce the risk of future downtime.</p>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact"><div class="contact-wrap in-index"><div><h2>Get Expert Help</h2><p style="color:#94a3b8;margin-bottom:1.5rem">Tell us what is failing and we will reply with next steps.</p><div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name"><span class="err">Please enter your name.</span></div>
+<div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email"><span class="err">Please enter a valid email.</span></div>
+<div class="field"><label for="phone">Phone (optional)</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+<div class="field"><label for="topic">What do you need?</label><select id="topic" name="topic"><option>Website/app failure</option><option>Performance optimization</option><option>Custom software</option><option>Maintenance &amp; support</option><option>Sponsorship</option><option>Other</option></select></div>
+<div class="field"><label for="message">Describe the problem</label><textarea id="message" name="message" rows="5"></textarea><span class="err">Please tell us a little about it.</span></div>
+<input class="hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<button class="btn" type="submit">Send Message</button><p class="form-msg" role="status"></p></form>
+<div><ul class="info-list"><li><strong>General &amp; support</strong><a href="mailto:info@mphithitech.co.za">info@mphithitech.co.za</a></li>
+<li><strong>Sponsors &amp; partners</strong><a href="mailto:sponsors@mphithitech.co.za">sponsors@mphithitech.co.za</a></li>
+<li><strong>Based in</strong>South Africa</li><li><strong>Response time</strong>We aim to reply within one business day.</li></ul></div></div><form class="form" data-contact novalidate></div></section>
+
+    <!-- Footer -->
+    <footer class="site-footer"><img src="Mphithi-Tech.jpg" alt="Mphithi-Tech logo"><p>Building reliable software. Fixing what others can't.</p><nav><a href="index.html">Home</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav><p>&copy; <span data-year>2026</span> Mphithi-Tech Holdings (Pty) Ltd. All rights reserved.</p></footer>
+<script src="script.js"></script>
+<script src="assistant.js"></script>
+</body>
+</html>
